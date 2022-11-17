@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <curses.h>
 #include <stdlib.h>
 
 struct node
@@ -10,7 +9,7 @@ struct node
 
 void insert_end(int);
 void insert_beg(int);
-void l_delete(int);
+void delete_val(int);
 void delete_beg();
 void delete_end();
 void display();
@@ -26,12 +25,12 @@ void main(){
         printf("\n*******************************************************");
 	    printf("\n1.INSERT AT END");
 	    printf("\n2.INSERT AT BEG");
-	    printf("\n3.DELETE A PARTICULAR ELE");
+	    printf("\n3.DELETE A PARTICULAR VALUE");
         printf("\n4.DELETE FROM BEG");
         printf("\n5.DELETE FROM END");
         printf("\n6.DISPLAY");
         printf("\n7.EXIT");
-        printf("\nenter ur choice : ");
+        printf("\n\nenter ur choice : ");
         scanf("%d",&n);
 
         switch(n)
@@ -46,7 +45,7 @@ void main(){
             break;
         case 3: printf("\nenter the value: ");
             scanf("%d",&val);
-            l_delete(val);
+            delete_val(val);
             break;
         case 4: 
             delete_beg();
@@ -62,13 +61,13 @@ void main(){
             break;
         }
 
-    } while ('y' == getchar);
+    } while (1);
 }
 
-void insert_end(int ele){
+void insert_end(int val){
     tmp = p;
     tmp1 = (struct node*)malloc(sizeof(struct node));
-    tmp1 -> data = ele;
+    tmp1 -> data = val;
     tmp1 -> next = NULL;
     
     if(p == NULL){
@@ -82,19 +81,19 @@ void insert_end(int ele){
     }
 }
 
-void insert_beg(int ele){
+void insert_beg(int val){
     tmp=p;
     tmp1 =(struct node*)malloc(sizeof(struct node));
-    tmp1->data=ele;
+    tmp1->data=val;
     tmp1->next=p;
     p=tmp1;
 }
 
-void l_delete(int ele){
+void delete_val(int val){
     tmp = p;
     struct node *pre = tmp;
     while(tmp!= NULL){
-        if(tmp-> data == ele){
+        if(tmp-> data == val){
             if(tmp == p){
                 p = tmp -> next;
                 free(tmp);
@@ -104,21 +103,21 @@ void l_delete(int ele){
             free(tmp);
             return;
             }
-            printf("\n Element deleted !!");
+            printf("\nElement deleted !!\n");
         }else{
             pre = tmp;
             tmp = tmp ->next;
         }
     }
-    printf("\n no found !! ");
+    printf("\nno found !! ");
 }
 
 void delete_beg(){
     tmp = p;
     if(p == NULL){
-        printf("\n no element to be deleted !!");
+        printf("\nno element to be deleted !!\n");
     }else{
-        printf("\nelement deleted - %d", p->data);
+        printf("\nelement deleted : %d\n", p->data);
         p=p->next;
     }
 }
@@ -127,9 +126,9 @@ void delete_end(){
     tmp = p;
     struct node* pre;
     if(p == NULL){
-        printf("\n no element to be deleted !!");
+        printf("\nno element to be deleted !!\n");
     }else if(p -> next == NULL){
-        printf("\n element deleted - %d", p->data);
+        printf("\nelement deleted : %d\n", p->data);
         p = NULL;
     }else{
         while(tmp->next!= NULL){
@@ -137,15 +136,22 @@ void delete_end(){
             tmp=tmp->next;
         }
         pre -> next = NULL;
-        printf("\nelement deleted - %d", tmp->data);
+        printf("\nelement deleted : %d\n", tmp->data);
     }
 }
 
 void display(){
     tmp = p;
+
+    if(tmp == NULL)
+    {
+        printf("\nNo elements to display\n");
+        return;
+    }
+
     while (tmp != NULL)
     {
-        printf("\n %d", tmp-> data);
+        printf("\n%d", tmp-> data);
         tmp = tmp -> next;
     }
     printf("\n");

@@ -1,0 +1,1 @@
+## cria uma lista ligada e amostra na ordem inversa

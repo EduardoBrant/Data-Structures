@@ -15,19 +15,18 @@ int main(){
 
     printf("\n-------------------------------------------------");
     printf("\n                   Linked List                 \n");
-    printf("\n cria uma lista ligada e amostra na ordem inversa");
     printf("\n-------------------------------------------------");
     
-    printf("\n\nDigite o numero de nós que deseja inserir: ");
+    printf("\nEnter the number of nodes you want to insert: ");
     scanf("%d", &n);
     printf("\n");
 
     createNodeList(n);
 
-    printf("\nLista em ordem: \n");
+    printf("\nlist in order \n");
     printList();
 
-    printf("\nlista invertida : \n");
+    printf("\ninverted list \n");
     invertList();
     printList();
 
@@ -41,9 +40,9 @@ void createNodeList(int n){
     stnode = (struct node*)malloc(sizeof(struct node));
 
     if(stnode == NULL){
-        printf("\n Memória não pode ser alocada ");
+        printf("\nMemory cannot be allocated !!");
     }else{
-        printf("Insira o dado do 1° nó: ");
+        printf("Insert the data of the 1° node: ");
         scanf("%d", &num);
         stnode -> num = num;
         stnode -> next = NULL;
@@ -54,10 +53,10 @@ void createNodeList(int n){
             fnNode = (struct node*)malloc(sizeof(struct node));
 
             if(fnNode == NULL){
-                printf("\n Memória não pode ser alocada ");
+                printf("\nMemory cannot be allocated !!");
                 break;
             }else{
-                printf("Insira o dado do %i° nó: ", i+1);
+                printf("Insert the data of the %i° node: ", i+1);
                 scanf("%d", &num);
                 fnNode -> num = num;
                 fnNode -> next = NULL;
@@ -94,14 +93,14 @@ void printList(){
     struct node *tmp;
 
     if(stnode == NULL){
-        printf("\nLista vazia");
+        printf("\nEmpty list");
     }else{
         tmp = stnode;
         
         int i = 1;
         while (tmp != NULL)
         {
-            printf("Dado do %i° nó : %i \n", i,  tmp -> num);
+            printf("%i° node data: %i \n", i,  tmp -> num);
             tmp = tmp -> next;
             i++;
         }

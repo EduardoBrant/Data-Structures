@@ -21,12 +21,12 @@ int main(){
         printf("\n*******************************************************");
         printf("\n                          MENU                         ");
         printf("\n*******************************************************");
-        printf("\n1.PUSH");
-	    printf("\n2.POP");
-	    printf("\n3 IS EMPTY");
-	    printf("\n4.DISPLAY");
-	    printf("\n5.EXIT");
-	    printf("\nenter ur choice : ");
+        printf("\n1.Push");
+	    printf("\n2.Pop");
+	    printf("\n3.Is empty?");
+	    printf("\n4.Display");
+	    printf("\n5.Exit");
+	    printf("\n\nEnter ur choice : ");
 	    scanf("%d",&n);
 
         switch(n)
@@ -49,7 +49,7 @@ int main(){
                 exit(0);
                 break;
             default:
-                printf("\nWrong choice ");
+                printf("\nWrong choice !!\n");
                 break;
         }
     }while(1);
@@ -77,9 +77,9 @@ void delete_end(){
     struct node* pre;
 
     if (p == NULL){
-        printf("\nno element to be deleted");
+        printf("\nno element to be deleted\n");
     }else if(p-> next == NULL){
-        printf("\nelement deleted - %d", p -> data);
+        printf("\nelement deleted : %d\n", p -> data);
         p = NULL;
         end = NULL;
     }else{
@@ -89,22 +89,29 @@ void delete_end(){
         }
         pre -> next = NULL;
         end = pre;
-        printf("element deleted - %d", tmp -> data);
+        printf("\nelement deleted : %d\n", tmp -> data);
     }
 }
 
 void isEmpty(){
     if(p == NULL){
-        printf("\nStack is empty");
+        printf("\nStack is empty\n");
     }else{
-        printf("\nStack no is empty");
+        printf("\nStack no is empty\n");
     }
 }
 
 void display(){
     tmp = p;
+
+    if(tmp == NULL){
+        printf("\nno elements to display\n");
+        return;
+    }
+
     while(tmp != NULL){
-        printf("\n %d", tmp -> data);
+        printf("\n%d", tmp -> data);
         tmp = tmp -> next;
     }
+    printf("\n");
 }

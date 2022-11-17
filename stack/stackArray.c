@@ -52,39 +52,44 @@ int main(){
     int val, n;
     struct stack* stack = create(100);
 
-    do{
+    do
+    {
         printf("\n*******************************************************");
         printf("\n                          MENU                         ");
         printf("\n*******************************************************");
-	    printf("\n1. Inserir elemento no topo");
-	    printf("\n2. Remover elemento do topo");
-	    printf("\n3. Ver elemento do topo");
-	    printf("\n4. Esta vazia? ");
-	    printf("\n5. Sair ");
-	    printf("\n\nescolha uma das opções acima : ");
+	    printf("\n1. Insert element at top");
+	    printf("\n2. Remove element from top");
+	    printf("\n3. See top element");
+	    printf("\n4. Is empty? ");
+	    printf("\n5. Exit ");
+	    printf("\n\nEnter ur choice : ");
         scanf("%d", &n);
 
         switch(n)
         {
             case 1 : 
-                printf("\nDIgite um valor: ");
+                printf("\nenter the value: ");
                 scanf("%d",&val);
                 push(stack,val);
                 break;
             case 2 : 
-                printf("\nnumero removido : %d\n", pop(stack));
+                if(stack -> top == -1){
+                    printf("\nNo elements to be deleted\n");
+                    break;
+                }
+                printf("\nelement removed : %d\n", pop(stack));
                 break;
-            case 3 : 
-                printf("\nnumero do topo : %d\n", peek(stack));
+            case 3 :
+                printf(isEmpty(stack) == 1 ? "\nNo element at top\n" : "\nTop number: %d\n", peek(stack));
                 break;
             case 4 : 
-                printf(isEmpty(stack) == 1 ? "\nSim\n" : "\nNão\n");
+                printf(isEmpty(stack) == 1 ? "\nYes\n" : "\nNot\n");
                 break;
             case 5 : 
                 exit(0);
                 break;   
             default : 
-                printf("\nOpção Invalida!\n");
+                printf("\nWrong choice !!\n");
                 break;
         }
     }while(1);
