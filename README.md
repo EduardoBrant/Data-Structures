@@ -1,6 +1,6 @@
 # Data Structures
 
-Examples of data structures in c language
+Examples of dynamics data structures in c language
 
 ## table of contents
 
