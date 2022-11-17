@@ -1,1 +1,4 @@
-## cria uma lista ligada e amostra na ordem inversa
+# Linked List
+
+- [Linked List](linkedList) (default linked list)
+- [Linked List Reverse](/linkedListReverse) (it is possible to create a list and reverse its order)
