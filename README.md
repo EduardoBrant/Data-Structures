@@ -1,9 +1,20 @@
-# Data Structures
+# 🔹Data Structures (examples)
 
-Examples of dynamics data structures in c language
+#### - Linear Data Structure
+  - Dynamics Data Structures
+    - [Linked List](/linkedList/)
+    - [queue](/queue/)
+    - [stack](/stack/)
 
-## table of contents
+  - Static Data Structure
+    - [Array](/array)
 
-- [Linked List](/linkedList/)
-- [queue](/queue/)
-- [stack](/stack/)
+#### - Non-linear Data structure
+  - [Tree](/tree)
+  - [Graph](/graph)
+
+# 📚 Study Material (Websites)
+
+- https://www.geeksforgeeks.org/data-structures/ 
+- https://towardsdatascience.com/8-common-data-structures-every-programmer-must-know-171acf6a1a42
+- https://techdevguide.withgoogle.com/paths/data-structures-and-algorithms/
