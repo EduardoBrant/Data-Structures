@@ -3,15 +3,15 @@
 #### - Linear Data Structure
   - Dynamics Data Structures
     - [Linked List](/linkedList/)
-    - [queue](/queue/)
-    - [stack](/stack/)
+    - [Queue](/queue/)
+    - [Stack](/stack/)
 
   - Static Data Structure
     - [Array](/array)
 
 #### - Non-linear Data structure
   - [Tree](/tree)
-  - [Graph](/graph)
+  - [Graph](/graph/graph.c)
 
 # 📚 Study Material (Websites)
 
