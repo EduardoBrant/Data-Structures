@@ -24,7 +24,7 @@ int main()
         printf("\n*******************************************************");
         printf("\n1.Enqueue");
         printf("\n2.Dequeue");
-        printf("\n3.Is empty");
+        printf("\n3.Is empty ?");
         printf("\n4.Display ");
         printf("\n5.Exit");
         printf("\n\nEnter ur choice : ");

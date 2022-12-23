@@ -65,7 +65,12 @@ void printGraph(struct graph *graph)
 
 int main()
 {
+    printf("----------------------------------------\n"); 
+    printf("                 GRAPH                  \n");
+    printf("----------------------------------------\n");
+    
     struct graph *graph = createAGraph(4);
+    
     addEdge(graph, 0, 1);
     addEdge(graph, 0, 3);
     addEdge(graph, 0, 2);

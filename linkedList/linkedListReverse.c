@@ -68,24 +68,24 @@ void createNodeList(int n){
 }
 
 void invertList(){
-    struct node *noAnterior, *noAtual;
+    struct node *ltNode, *ctNode;
 
     if(stnode != NULL){
-        noAnterior = stnode;
-        noAtual = stnode -> next;
+        ltNode = stnode;
+        ctNode = stnode -> next;
         stnode = stnode -> next;
 
-        noAnterior -> next = NULL;
+        ltNode -> next = NULL;
 
         while(stnode != NULL){
             stnode = stnode -> next;
-            noAtual -> next = noAnterior;
+            ctNode -> next = ltNode;
 
-            noAnterior = noAtual;
-            noAtual = stnode;
+            ltNode = ctNode;
+            ctNode = stnode;
         }
 
-        stnode = noAnterior;
+        stnode = ltNode;
     }
 }
 

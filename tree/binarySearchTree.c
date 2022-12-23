@@ -164,7 +164,7 @@ int main()
     struct bst *root = NULL;
     int val,num,n;
 
-    printf("\nEnter no. of term: ");
+    printf("\nEnter the numbers of terms you want: ");
     scanf("%d",&n);
 
     printf("\n");
