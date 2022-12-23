@@ -1,4 +1,8 @@
-# 🔹Data Structures (examples)
+### Compile using in terminal:
+
+    gcc <file name> -o <file name after compiled>
+
+# Data Structures (examples)
 
 #### - Linear Data Structure
   - Dynamics Data Structures
@@ -13,7 +17,7 @@
   - [Tree](/tree)
   - [Graph](/graph/graph.c)
 
-# 📚 Study Material (Websites)
+# Study Material (Websites)
 
 - https://www.geeksforgeeks.org/data-structures/ 
 - https://towardsdatascience.com/8-common-data-structures-every-programmer-must-know-171acf6a1a42
