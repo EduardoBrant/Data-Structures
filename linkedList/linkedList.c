@@ -14,7 +14,8 @@ void delete_beg();
 void delete_end();
 void display();
 
-void main(){
+
+int main(){
     int val, n;
     p = NULL;
 
@@ -62,6 +63,8 @@ void main(){
         }
 
     } while (1);
+
+   return 0;
 }
 
 void insert_end(int val){
